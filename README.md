@@ -28,3 +28,11 @@ You will only be able to view the generated db.sqlite file the first time you op
 - Click on the database name which is same as the one in the root of your project
 
 After these, you'll find a "sqlite explorer" collapsible dropdown towards the bottom of your vscode explorer. You will find your DB content in there.
+
+## TypeORM synchronize property
+https://github.com/follow-course/nestjs-car-api/blob/2da777c4862cdf7e4cbdbeb687116b0284e07240/src/app.module.ts#L16
+
+`Synchronize: true` should only be used in development, and should not be used in production. SQL database is usually very rigid. To make any changes to the structure of an SQL database/table (e.g. create or remove tables or columns, or even changing the type of data stored iin the columns), you would usually need to write "migration" code. By setting synchronize to true, typeORM will automatically do such migration. It is dangerous to use this in production so that you don't accidentally delete data for example. You need to write migration code for production.
+
+## Understanding typeORM decorators
+<img width="849" alt="TypeORM decorators to tables" src="https://user-images.githubusercontent.com/45185388/154826094-17dd42fe-75cd-4b22-96a5-c80367490017.png">
