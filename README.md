@@ -36,3 +36,9 @@ https://github.com/follow-course/nestjs-car-api/blob/2da777c4862cdf7e4cbdbeb6871
 
 ## Understanding typeORM decorators
 <img width="849" alt="TypeORM decorators to tables" src="https://user-images.githubusercontent.com/45185388/154826094-17dd42fe-75cd-4b22-96a5-c80367490017.png">
+
+## A few more routes: Just to help understand typeORM
+Note: Yellow portin not needed for our app. Those routes are only created to help understand typeORM.
+|<img width="939" alt="Screenshot 2022-02-20 at 4 15 52 AM" src="https://user-images.githubusercontent.com/45185388/154827061-3cc32eb3-8439-4289-b717-855a2d75fe82.png">|<img width="946" alt="Screenshot 2022-02-20 at 4 18 17 AM" src="https://user-images.githubusercontent.com/45185388/154827080-b1bbee06-b4a1-486c-b364-fe52e7cbeb80.png">|
+|--|--|
+
