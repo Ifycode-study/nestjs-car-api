@@ -36,3 +36,7 @@ https://github.com/follow-course/nestjs-car-api/blob/2da777c4862cdf7e4cbdbeb6871
 
 ## Understanding typeORM decorators
 <img width="849" alt="TypeORM decorators to tables" src="https://user-images.githubusercontent.com/45185388/154826094-17dd42fe-75cd-4b22-96a5-c80367490017.png">
+
+
+## Quick note on repositories
+Check out the repository API for the different methods you can use on a DB at the [typeORM's official documentation](https://typeorm.io/#/repository-api).
