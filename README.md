@@ -38,7 +38,9 @@ https://github.com/follow-course/nestjs-car-api/blob/2da777c4862cdf7e4cbdbeb6871
 <img width="849" alt="TypeORM decorators to tables" src="https://user-images.githubusercontent.com/45185388/154826094-17dd42fe-75cd-4b22-96a5-c80367490017.png">
 
 ## Quick note on repositories
-Check out the repository API for the different methods you can use on a DB at the [typeORM's official documentation](https://typeorm.io/#/repository-api).
+Check out the repository API for the different methods you can use on a DB at the [typeORM's official documentation](https://typeorm.io/#/repository-api). The diagram below shows and gives brief explanation of some repository methods used in this project:
+
+<img width="990" alt="Screenshot 2022-02-22 at 1 54 48 AM" src="https://user-images.githubusercontent.com/45185388/155044213-a55cc50f-a4ef-4cc5-9e68-d403c16f6a49.png">
 
 ## A few extra routes: Just to help understand typeORM
 Note: Yellow portin not needed for our app. Those routes are only created to help understand typeORM.
