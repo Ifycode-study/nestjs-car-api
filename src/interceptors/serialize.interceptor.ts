@@ -8,7 +8,14 @@ import { /* plainToClass, */ plainToInstance } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export function Serialize(dto: any) {
+interface ClassConstructor {
+  //new (...args: any[]): {}; //my editor keeps closing up the space after the new keyword on save
+
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  new(...args: any[]): {};
+}
+
+export function Serialize(dto: ClassConstructor) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }
 
