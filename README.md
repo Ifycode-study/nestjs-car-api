@@ -53,3 +53,9 @@ https://github.com/follow-course/nestjs-car-api/blob/54980c6be3074d2507c68defb78
 
 ## Notes on serialzation
 The password property for example shouldn't be passed along with data from our api when we attempt to get, post, delete etc. Nest js suggests that you [Exclude the response property](https://github.com/Ifycode-study/nestjs-car-api/commit/996b3559d847f9a1bc44ed334c964603db103149) from within thhe .entity.ts file and with the in built `ClassSerializerInterceptor` used inside of the controller. While this works/helps for the case we are currently using it for, it can't help if you need to separate the response for a regular user from that of the admin. The best way is to build your own custom interceptor and create a Dto file that will expose only properties you want to be included in the response (See commits on Feb 23, 2022).
+
+## Authentication Overview
+
+![Screenshot_20220225-065325](https://user-images.githubusercontent.com/45185388/155663298-cc9774f1-4c19-45f4-95a9-95e89775646d.jpg)
+
+Note: The methods inside AuthService can instead be inside of the UserService if the application is small. But in large applications it is better that this separate AuthService is created. The AuthService depends on the UserService.
