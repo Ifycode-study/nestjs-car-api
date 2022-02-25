@@ -59,3 +59,8 @@ The password property for example shouldn't be passed along with data from our a
 ![Screenshot_20220225-065325](https://user-images.githubusercontent.com/45185388/155663298-cc9774f1-4c19-45f4-95a9-95e89775646d.jpg)
 
 Note: The methods inside AuthService can instead be inside of the UserService if the application is small. But in large applications it is better that this separate AuthService is created. The AuthService depends on the UserService.
+
+## Notes on salting and hashing
+Passwords should not be stored directly as plain strings in the database... Salt and hash the password before storing for security reasons.
+
+Use these inbuilt node packages: `randomBytes` to generate a salt (i.e. a string of random letters) and `scrypt`  which is thhe hashing function for hashing your password. Note that naturally, scrypt would make us uuse a callback - the `promisify` package ensures that it instead returns a promise not a callback.
