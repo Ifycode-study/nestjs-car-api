@@ -29,6 +29,11 @@ export class UsersController {
     return this.authService.signup(body.email, body.password);
   }
 
+  @Post('/signin')
+  signin(@Body() body: CreateUserDto) {
+    return this.authService.signin(body.email, body.password);
+  }
+
   @Get('/:id')
   async findUser(@Param('id') id: string) {
     //console.log('Handler is running...');
@@ -54,3 +59,12 @@ export class UsersController {
     return this.usersService.update(parseInt(id), body);
   }
 }
+
+// findAllUsers method to return only the first user that matches the email in the query string for /GET
+// Use this to understand authService signin method where detructuring to get a single user from the array
+
+// @Get()
+// async findAllUsers(@Query('email') email: string) {
+//   const [user] = await this.usersService.find(email);
+//   return user;
+// }
