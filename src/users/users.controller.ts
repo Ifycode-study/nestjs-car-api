@@ -27,6 +27,12 @@ export class UsersController {
 
   // See video 75 for example of changing and fetching session data
 
+  @Get('/whoami')
+  whoAmI(@Session() session: any) {
+    //console.log('Currently signed in user id: ', session.userId);
+    return this.usersService.findOne(session.userId);
+  }
+
   @Post('/signup')
   async createUser(@Body() body: CreateUserDto, @Session() session: any) {
     const user = await this.authService.signup(body.email, body.password);
