@@ -30,7 +30,15 @@ export class UsersController {
   @Get('/whoami')
   whoAmI(@Session() session: any) {
     //console.log('Currently signed in user id: ', session.userId);
+    if (!session.userId) {
+      throw new NotFoundException('No currently signeed in user');
+    }
     return this.usersService.findOne(session.userId);
+  }
+
+  @Post('/signout')
+  signOut(@Session() session: any) {
+    session.userId = null;
   }
 
   @Post('/signup')
