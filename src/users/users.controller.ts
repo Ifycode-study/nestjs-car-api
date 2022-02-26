@@ -16,6 +16,7 @@ import { Serialize } from '../interceptors/serialize.interceptor';
 import { UsersService } from './users.service';
 import { UserDto } from './dtos/user.dto';
 import { AuthService } from './auth.service';
+import { Currentuser } from './decorators/current-user.decorator';
 
 @Controller('auth')
 @Serialize(UserDto)
@@ -27,13 +28,18 @@ export class UsersController {
 
   // See video 75 for example of changing and fetching session data
 
+  // @Get('/whoami')
+  // whoAmI(@Session() session: any) {
+  //   //console.log('Currently signed in user id: ', session.userId);
+  //   if (!session.userId) {
+  //     throw new NotFoundException('No currently signeed in user');
+  //   }
+  //   return this.usersService.findOne(session.userId);
+  // }
+
   @Get('/whoami')
-  whoAmI(@Session() session: any) {
-    //console.log('Currently signed in user id: ', session.userId);
-    if (!session.userId) {
-      throw new NotFoundException('No currently signeed in user');
-    }
-    return this.usersService.findOne(session.userId);
+  whoAmI(@Currentuser() user: string) {
+    return user;
   }
 
   @Post('/signout')
