@@ -24,6 +24,8 @@ export class UsersController {
     private authService: AuthService,
   ) { }
 
+  // See video 75 for example of changing and fetching session data
+
   @Post('/signup')
   createUser(@Body() body: CreateUserDto) {
     return this.authService.signup(body.email, body.password);
