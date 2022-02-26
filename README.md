@@ -1,3 +1,4 @@
+
 # Nestjs (used) car API
 
 Course: "NestJS: The Complete Developer's Guide" by Stephen Grider.
@@ -60,7 +61,17 @@ The password property for example shouldn't be passed along with data from our a
 
 Note: The methods inside AuthService can instead be inside of the UserService if the application is small. But in large applications it is better that this separate AuthService is created. The AuthService depends on the UserService.
 
+![Screenshot_20220225-072451](https://user-images.githubusercontent.com/45185388/155858124-7a667445-c4ba-45a6-b2f3-77af3481bcf4.jpg)
+
+
+
 ## Notes on salting and hashing
 Passwords should not be stored directly as plain strings in the database... Salt and hash the password before storing for security reasons.
+
+![Screenshot_20220225-075636](https://user-images.githubusercontent.com/45185388/155858079-1ca59ceb-0f5a-4400-9d74-2679cf349f1e.jpg)
+
+![Screenshot_20220225-075737](https://user-images.githubusercontent.com/45185388/155858080-4992bd1f-86df-4465-9a7b-49e6b72d6962.jpg)
+
+![Screenshot_20220225-075846](https://user-images.githubusercontent.com/45185388/155858081-4c083a34-1499-4442-9f0c-feb52ec84e40.jpg)
 
 Use these inbuilt node packages: `randomBytes` to generate a salt (i.e. a string of random letters) and `scrypt`  which is thhe hashing function for hashing your password. Note that naturally, scrypt would make us uuse a callback - the `promisify` package ensures that it instead returns a promise not a callback.
