@@ -70,3 +70,10 @@ Passwords should not be stored directly as plain strings in the database... Salt
 |--|--|--|
 
 Use these inbuilt node packages: `randomBytes` to generate a salt (i.e. a string of random letters) and `scrypt`  which is thhe hashing function for hashing your password. Note that naturally, scrypt would make us uuse a callback - the `promisify` package ensures that it instead returns a promise not a callback.
+
+## Diagrams: Auth system features, (why a) decorator and interceptor
+|<img width="892" alt="Screenshot 2022-02-26 at 11 20 24 PM" src="https://user-images.githubusercontent.com/45185388/155862966-1b1871aa-5df2-4c05-ac4d-80b2495388c2.png">|<img width="909" alt="Screenshot 2022-02-27 at 12 58 51 AM" src="https://user-images.githubusercontent.com/45185388/155862965-407a597a-91ab-44e1-a344-ec8f433eb20b.png">|<img width="908" alt="Screenshot 2022-02-27 at 1 00 18 AM" src="https://user-images.githubusercontent.com/45185388/155862963-6de05530-334c-46a2-b51c-e80a8353ad4c.png">|
+|--|--|--|
+
+
+
