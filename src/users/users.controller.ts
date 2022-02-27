@@ -9,6 +9,7 @@ import {
   Post,
   Query,
   Session,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-users.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
@@ -18,6 +19,7 @@ import { UserDto } from './dtos/user.dto';
 import { AuthService } from './auth.service';
 import { Currentuser } from './decorators/current-user.decorator';
 import { User } from './user.entity';
+import { AuthGuard } from 'src/guards/auth.guard';
 
 @Controller('auth')
 @Serialize(UserDto)
@@ -39,10 +41,12 @@ export class UsersController {
   // }
 
   @Get('/whoami')
+  @UseGuards(AuthGuard)
   whoAmI(@Currentuser() user: User) {
-    if (!user) {
-      throw new NotFoundException('No currently signed in user');
-    }
+    // No more needed:
+    // if (!user) {
+    //   throw new NotFoundException('No currently signed in user');
+    // }
     return user;
   }
 
