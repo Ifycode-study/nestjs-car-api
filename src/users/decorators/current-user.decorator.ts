@@ -1,7 +1,9 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
 export const Currentuser = createParamDecorator(
-  (data: any, context: ExecutionContext) => {
+  (data: never, context: ExecutionContext) => {
+    const request = context.switchToHttp().getRequest();
+    console.log('Currently signed in user id: ', request.session.userId);
     return 'Hi there!';
   },
 );
