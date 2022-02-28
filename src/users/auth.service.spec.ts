@@ -13,6 +13,7 @@ it('can create an instance of auth service', async () => {
   // Create a module (& a Dependncy Injection container)
   const module = await Test.createTestingModule({
     providers: [
+      // Providers here are list of classes we want to register in our testing DI container
       AuthService,
       {
         provide: UsersService,

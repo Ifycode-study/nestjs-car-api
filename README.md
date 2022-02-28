@@ -75,5 +75,12 @@ Use these inbuilt node packages: `randomBytes` to generate a salt (i.e. a string
 |<img width="892" alt="Screenshot 2022-02-26 at 11 20 24 PM" src="https://user-images.githubusercontent.com/45185388/155862966-1b1871aa-5df2-4c05-ac4d-80b2495388c2.png">|<img width="909" alt="Screenshot 2022-02-27 at 12 58 51 AM" src="https://user-images.githubusercontent.com/45185388/155862965-407a597a-91ab-44e1-a344-ec8f433eb20b.png">|<img width="908" alt="Screenshot 2022-02-27 at 1 00 18 AM" src="https://user-images.githubusercontent.com/45185388/155862963-6de05530-334c-46a2-b51c-e80a8353ad4c.png">|
 |--|--|--|
 
+## Notes on testing
 
+Run test with:
 
+````
+npm run test:watch
+````
+
+Testing auth service: AuthService depends on the usersService, the usersService also depends on the (user) repository. We will therefore need to create a fake usersService to avoid complications. We are also only using/testing the .find() and .create() methods of the (fake) usersService since those are the only methods called (somewhere in the signin and signup methods of the authService). See diagrams and comments in the test file for more details.
