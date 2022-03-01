@@ -53,4 +53,12 @@ describe('AuthService', () => {
       done();
     }
   });
+
+  it('throws an error if signin is called with an unused email', async (done) => {
+    try {
+      await service.signin('test@test.com', 'testPassword');
+    } catch (err) {
+      done();
+    }
+  });
 });
