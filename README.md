@@ -84,3 +84,5 @@ npm run test:watch
 ````
 
 Testing auth service: AuthService depends on the usersService, the usersService also depends on the (user) repository. We will therefore need to create a fake usersService to avoid complications. We are also only using/testing the .find() and .create() methods of the (fake) usersService since those are the only methods called (somewhere in the signin and signup methods of the authService). See diagrams and comments in the test file for more details.
+
+About .find() and .create() methods, they are asynchronous in nature (i.e. it takes some amount of time to read or write data into the sqlite database). This is why they are made to return a promise. Promise.resolve(value) method creates a promise and immedately resolves it with a given value. It ensures that we get the exact api functionality that exists on the real usersService.
