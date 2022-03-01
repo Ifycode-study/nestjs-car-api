@@ -77,6 +77,9 @@ Use these inbuilt node packages: `randomBytes` to generate a salt (i.e. a string
 
 ## Notes on testing
 
+|<img width="763" alt="Screenshot 2022-02-28 at 12 34 40 PM" src="https://user-images.githubusercontent.com/45185388/156105800-e7b1b348-75b5-4065-8147-7cb2fee5bddd.png">|<img width="882" alt="Screenshot 2022-03-01 at 12 34 37 AM" src="https://user-images.githubusercontent.com/45185388/156105811-d46d69f8-1444-4ead-971b-9eb36c2662b4.png">|
+|--|--|
+
 Run test with:
 
 ````
